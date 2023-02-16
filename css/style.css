@@ -1,0 +1,136 @@
+/* *******************************************
+****** PROJECT SETUP
+******************************************* */
+
+/* VARIABLES */
+:root {
+    /* MAIN COLORS */
+    --main: black;
+    --secondary: white;
+    --accent: red;
+  
+    /* FONTS */
+    --title: serif;
+    --text: aerial;
+  }
+  
+  /* GLOBAL STYLES */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* outline: 2px solid gold; */
+  }
+  
+  /* h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--title);
+  }
+  
+  body {
+    font-family: var(--text);
+  } */
+  
+/* *******************************************
+****** PROJECT STYLES
+******************************************* */
+
+body {
+  background: url(https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?cs=srgb&dl=pexels-pixabay-235985.jpg&fm=jpg);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 100px;
+}
+
+h1 {
+  padding: 0;
+  margin: 0
+}
+
+button.nav {
+  height: 90px;
+  width: 90px;
+  margin: 10px;
+}
+
+.title {
+  text-align: center;
+  font-family: cursive;
+  color: goldenrod;
+  font-size: 8em;
+}
+
+main {
+  display: flex;
+  height: 400px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-around;
+  flex: 2;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+section.cats {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding-left: 20%;
+  border: solid goldenrod 5px;
+  background-color: antiquewhite;
+}
+
+
+section.difficulty {
+  margin: 10px;
+}
+
+
+button.category {
+  width: 40px;
+  height: 30px;
+  border-radius: 60px;
+  transition: 0.2s;
+}
+
+button.category:hover {
+  width: 50px;
+  height: 40px;
+}
+
+button.geography {
+  background: blue
+}
+
+button.entertainment {
+  background: magenta
+}
+
+button.history {
+  background:yellow
+}
+
+button.art {
+  background: brown
+}
+
+button.science {
+  background: green
+}
+
+button.sports {
+  background: orange
+}
+
