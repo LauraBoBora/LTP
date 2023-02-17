@@ -40,14 +40,23 @@
 ******************************************* */
 
 body {
-  background: url(https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg?cs=srgb&dl=pexels-pixabay-235985.jpg&fm=jpg);
+  background: lightblue;
 }
 
 nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: 100px;
+  height: 80px;
+}
+
+button.nav {
+  background:blueviolet;
+  color: whitesmoke;
+  height: 20px;
+
+  border-radius: 80%;
+
 }
 
 h1 {
@@ -63,40 +72,101 @@ button.nav {
 
 .title {
   text-align: center;
-  font-family: cursive;
+  font-family: 'Mystery Quest';
+  font-weight: lighter;
   color: goldenrod;
   font-size: 8em;
 }
 
 main {
   display: flex;
-  height: 400px;
-}
-
-section {
-  display: flex;
   flex-direction: column;
-  align-items: stretch;
-  justify-content: space-around;
-  flex: 2;
-  font-family: monospace;
-  font-size: 2em;
+  align-items: center;
 }
-
-section.cats {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  padding-left: 20%;
-  border: solid goldenrod 5px;
-  background-color: antiquewhite;
-}
-
 
 section.difficulty {
-  margin: 10px;
+  margin: 20px;
 }
 
+/* Dropdown Button */
+.dropbtn {
+  background-color: #2980B9;
+  font-family: 'Mystery Quest';
+  font-weight: lighter;
+  color: goldenrod;
+  padding: 16px;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3498DB;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  font-family: 'Mystery Quest';
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  /* z-index: 1; */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+/* Quiz Card Container */
+section.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-family: monospace;
+  font-size: 2em;
+  border: solid goldenrod 5px;
+  background-color: antiquewhite;
+  width: 500px;
+}
+
+/* Side of Card */
+article.sideCard {
+  display: flex;
+  width: 120px;
+  padding: 10px;
+  background-color: blanchedalmond;
+}
+
+/* Card Categories */
+article.divs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+div {
+  margin: 10px;
+}
 
 button.category {
   width: 40px;
