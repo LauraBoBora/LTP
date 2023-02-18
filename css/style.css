@@ -136,19 +136,51 @@ section.difficulty {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-/* Quiz Card Container */
-section.card {
+
+/* Card */
+section#card {
+  font-family: monospace;
+  border: solid goldenrod 5px;
+  background-color: antiquewhite;
+  font-size: 2em;
+  width: 500px;
+  height: 350px;
+  padding: 10px;
+  perspective: 1000px;
+}
+
+/* position Card front/back */
+section.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+
+/* Position the front and back side */
+section.card-front, section.card-back {
+  /* position: absolute; */
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+
+/* section.card:hover section.card-inner {
+  transform: rotateX(180deg);
+} */
+
+/* Card Container (front) */
+section.card-front {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  font-family: monospace;
-  font-size: 2em;
-  border: solid goldenrod 5px;
-  background-color: antiquewhite;
-  width: 500px;
 }
 
-/* Side of Card */
+/* Side of Front of Card */
 article.sideCard {
   display: flex;
   width: 120px;
@@ -162,7 +194,6 @@ article.divs {
   flex-direction: column;
   flex: 1;
 }
-
 
 div {
   margin: 10px;
@@ -204,3 +235,12 @@ button.sports {
   background: orange
 }
 
+.flipCard {
+  transform: rotateY(180deg);
+}
+
+
+/* Style the back side */
+section.card-back {
+  transform: rotateY(180deg);
+} 

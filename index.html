@@ -29,23 +29,24 @@
         <h1 class="title">Trivia</h1>
     </header>
 
-
 <main>
 
 <!-- DIFFICULTY LEVEL    -->
     <section class="difficulty"> 
         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Difficulty</button>
+            <button onclick="dropDown()" class="dropbtn">Difficulty</button>
             <div id="myDropdown" class="dropdown-content">
-              <a href="#">Take It Easy</a>
-              <a href="#">Medium Feels</a>
-              <a href="#">Challenge Accepted</a>
+              <a href="#" id="easy">Take It Easy</a>
+              <a href="#" id="medium">Medium Feels</a>
+              <a href="#" id="hard">Challenge Accepted</a>
             </div>
           </div>  
     </section>
 
 <!-- CATEGORIES -->
-    <section class="card">
+    <section class="card" id="card">
+        <section class="card-inner">
+        <section class="card-front">
         <article class="sideCard"></article>
         <article class="divs">
             <div>
@@ -74,6 +75,9 @@
             </div>
         </article>
     </section>
+    <section class="card-back"></section>
+    </section>
+</section>
 
 <!-- ANIMATION -->
 </main></main>
