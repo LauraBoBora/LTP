@@ -211,36 +211,45 @@ button.category:hover {
   height: 40px;
 }
 
-button.geography {
+button.category.geography, .answer.D {
   background: blue
 }
 
-button.entertainment {
+button.category.entertainment {
   background: magenta
 }
 
-button.history {
+button.category.history, .answer.B {
   background:yellow
 }
 
-button.art {
+button.category.art, button.category.answer.A {
   background: brown
 }
 
-button.science {
+button.category.science, .answer.C {
   background: green
 }
 
-button.sports {
+button.category.sports {
   background: orange
 }
 
-.flipCard {
+
+
+
+
+
+
+
+
+
+/* .flipCard {
   transform: rotateY(180deg);
 }
 
 
-/* Style the back side */
+Style the back side 
 section.card-back {
   transform: rotateY(180deg);
-} 
+} */
