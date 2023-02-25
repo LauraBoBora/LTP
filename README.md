@@ -3,10 +3,21 @@
 
 Create an API URL for Open Trivia DB using template literal & input from user for difficulty and category. Returns a question with 4 multiple choice answers. When user selects an answer, the pie is filled in if answered correctly, or ‘wrong’ is displayed. User has 10 chances to get all 6 pieces of pie filled in.
 
+### MVP GOALS
+- As a player, I want to click a difficulty level and category to get a question
+- As a player, click my answer choice
+- As a player, know if my answer is correct
+- As a player, I want to know if I've won or lost
+
+### Stretch Goals
+- As a player, I would like to be able to pick my difficulty level and category for all 10 questions rather than individually 
+- As a player, I would like to see the card flip back and forth from questions to answers
+- As a player, I would like to see cool animations for winning and losing answers
+
 ### TOP NAVIGATION
 - Info and Instructions Buttons
 - Instruction Button - how to play the game 
-- Info Button - a little about me and why I’m doing this project
+- Info Button - a little about me with my LinkedIn and why I’m doing this project
 
 ### TITLE BANNER
 
