@@ -23,4 +23,4 @@ Create an API URL for Open Trivia DB using template literal & input from user fo
 - If question not answered correctly, will remain empty
 
 ### WIN/LOSE
-- Will have 10 questions to get all 6 pies
+- Will have 10 questions to get all 6 pieces of pie
