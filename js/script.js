@@ -1,4 +1,4 @@
-// window.onload = sendApiRequest
+
 
 /* DROPDOWN BUTTON - https://www.w3schools.com/howto/howto_js_dropdown.asp
 When the user clicks on the button, toggle between hiding and showing the dropdown content */
@@ -19,13 +19,14 @@ window.onclick = function(event) {
     };
 };
 
+
 /* functions for choosing difficulty */
 const easy = document.getElementById("easy");
 const medium = document.getElementById("medium");
 const hard = document.getAnimations("hard");
 
 
-// Send API Request, log data in console, Call Use API Data
+// Send API Request, log data in console, Call Use API Data - https://www.youtube.com/watch?v=SgJ_femmsfg
 async function sendApiRequest() {
     let question = await fetch(`https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple`);
     console.log(question);
@@ -36,13 +37,15 @@ async function sendApiRequest() {
 
 // Use API Data - combines correct & incorrect answers, shuffles them, then displays question and answer buttons/texts
 let wholeCard = document.querySelector("section.card");
+let original = wholeCard.innerHTML;
+let pie = 0;
 function useApiData(data) {
     let answrArr = data.results[0].incorrect_answers;
     let correctAns = data.results[0].correct_answer;
     answrArr.push(data.results[0].correct_answer);
     shuffleArray(answrArr);
     answers(answrArr);
-    wholeCard.innerText = (`${data.results[0].question}`);
+    wholeCard.innerHTML = (`${data.results[0].question}`);
     answers(answrArr, correctAns);
 };
 
@@ -65,15 +68,17 @@ const answers = (answrArr, correctAns) => {
     btnChoice = buttonLetters[i]
     newBtn.innerText = btnChoice;
     newBtn.setAttribute('id', answrArr[i]);
-    newBtn.setAttribute('class', 'category answer');
+    newBtn.setAttribute('class', 'category answer')
     console.log(newBtn);
     let newText = document.createElement('text');
-    newText.innerText=answrArr[i];
+    newText.innerHTML=answrArr[i];
     newText.setAttribute('class', 'answer');
     newText.setAttribute('id', btnChoice);
     let newDiv = document.createElement('div');
     wholeCard.append(newDiv);
     newDiv.append(newBtn, newText);}
+  
+  
   // Select Correct Answer
   let chooseAnswer = document.getElementsByClassName("answer");
   console.log(chooseAnswer);
@@ -81,51 +86,40 @@ const answers = (answrArr, correctAns) => {
     answer.addEventListener('click', evt => {
       console.log(evt);
       let answerChoice = answer.innerText;
-      let answerLetter = evt.target.getAttribute('id');
+      let answerBtn = answer.id;
       console.log(answerChoice);
-      if (answerChoice == correctAns) {
+      if (answerChoice == correctAns || answerBtn == correctAns) {
         console.log('correct');
+        alert("Correct! UR DA BEST!");
+        wholeCard.innerHTML = original;
+        pie++;
+        console.log(pie);
+        // return;
+        // correct function - pie
       }
-      else {console.log('incorrect')}
+      else {console.log('incorrect');
+      alert("INCORRECT");
+      wholeCard.innerHTML = original;
+      console.log(pie);
+      // return;
+    };
+    // function next q
+    
   })});
-
 };
 
-// Select Correct Answer
-// let chooseAnswer = document.getElementsByClassName("answer");
-// console.log(chooseAnswer);
-// Array.from(chooseAnswer).forEach((answer) => {
-//   answer.addEventListener('click', evt => {
-//     console.log(evt);
-//     let answerChoice = answer.innerText;
-//     console.log(answerChoice);
-//     if (answerChoice == correctAns) {
-//       console.log('correct');
-//     }
-//     else {console.log('incorrect')}
-//   })});
 
-
-
-
-
-// function answerHeader (cat) {
-//   let headerBtn = document.querySelector(`button.${cat}`);
-//   let headerCat = document.querySelector(`text.${cat}`);
-//   let wholeCard = document.querySelector("section.card");
-//   wholeCard.prepend = headerBtn;
-//   console.log(wholeCard);
-// }
 
 
 // Click Event
-let chooseCat = document.getElementsByClassName("category");
-// console.log(chooseCat)
-Array.from(chooseCat).forEach((category) => {
-  category.addEventListener('click', evt => {
-    console.log(evt);
-    let catId = category.getAttribute('id');
-    console.log(catId);
-    sendApiRequest();
-  })});
-
+window.onclick = function() {
+  let chooseCat = document.getElementsByClassName("category");
+  // console.log(chooseCat)
+  Array.from(chooseCat).forEach((category) => {
+    category.addEventListener('click', evt => {
+      console.log(evt);
+      let catId = category.getAttribute('id');
+      console.log(catId);
+      sendApiRequest();
+    })});
+  };

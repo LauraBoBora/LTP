@@ -131,10 +131,14 @@ section.difficulty {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.show {
+  display: block;
+}
 
 
 /* Card */
@@ -211,7 +215,7 @@ button.category:hover {
   height: 40px;
 }
 
-button.category.geography, .answer.D {
+button.category.geography, button.D {
   background: blue
 }
 
@@ -219,15 +223,15 @@ button.category.entertainment {
   background: magenta
 }
 
-button.category.history, .answer.B {
+button.category.history, button.B {
   background:yellow
 }
 
-button.category.art, button.category.answer.A {
+button.category.art, button.A {
   background: brown
 }
 
-button.category.science, .answer.C {
+button.category.science, button.C {
   background: green
 }
 
