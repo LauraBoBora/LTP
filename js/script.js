@@ -29,7 +29,7 @@ const hard = document.getAnimations("hard");
 // Send API Request, log data in console, Call Use API Data - https://www.youtube.com/watch?v=SgJ_femmsfg
 async function sendApiRequest() {
     let question = await fetch(`https://opentdb.com/api.php?amount=1&category=9&difficulty=easy&type=multiple`);
-    console.log(question);
+    // console.log(question);
     let data = await question.json();
     console.log(data);
     useApiData(data);
@@ -69,7 +69,7 @@ const answers = (answrArr, correctAns) => {
     newBtn.innerText = btnChoice;
     newBtn.setAttribute('id', answrArr[i]);
     newBtn.setAttribute('class', 'category answer')
-    console.log(newBtn);
+    // console.log(newBtn);
     let newText = document.createElement('text');
     newText.innerHTML=answrArr[i];
     newText.setAttribute('class', 'answer');
@@ -78,18 +78,17 @@ const answers = (answrArr, correctAns) => {
     wholeCard.append(newDiv);
     newDiv.append(newBtn, newText);}
   
-  
+ 
   // Select Correct Answer
   let chooseAnswer = document.getElementsByClassName("answer");
-  console.log(chooseAnswer);
+  // console.log(chooseAnswer);
   Array.from(chooseAnswer).forEach((answer) => {
     answer.addEventListener('click', evt => {
-      console.log(evt);
+      // console.log(evt);
       let answerChoice = answer.innerText;
       let answerBtn = answer.id;
-      console.log(answerChoice);
+      // console.log(answerChoice);
       if (answerChoice == correctAns || answerBtn == correctAns) {
-        console.log('correct');
         alert("Correct! UR DA BEST!");
         wholeCard.innerHTML = original;
         pie++;
@@ -110,16 +109,27 @@ const answers = (answrArr, correctAns) => {
 
 
 
-
+let chooseCat = document.querySelectorAll(".category");
 // Click Event
-window.onclick = function() {
-  let chooseCat = document.getElementsByClassName("category");
-  // console.log(chooseCat)
-  Array.from(chooseCat).forEach((category) => {
+// const questions = function() {
+  console.log(chooseCat)
+  chooseCat.forEach((category) => {
     category.addEventListener('click', evt => {
-      console.log(evt);
+      // console.log(evt);
       let catId = category.getAttribute('id');
       console.log(catId);
       sendApiRequest();
     })});
-  };
+  // };
+// questions();
+  // window.onclick = function() {
+  //   let chooseCat = document.getElementsByClassName("category");
+  //   // console.log(chooseCat)
+  //   Array.from(chooseCat).forEach((category) => {
+  //     category.addEventListener('click', evt => {
+  //       // console.log(evt);
+  //       let catId = category.getAttribute('id');
+  //       // console.log(catId);
+  //       sendApiRequest();
+  //     })});
+  //   };
