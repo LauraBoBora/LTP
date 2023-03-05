@@ -27,6 +27,7 @@
 <!-- HEADER -->
     <header>
         <h1 class="title">Trivia</h1>
+        <h3 class="start">This is how you start the game..</h3>
     </header>
 
 <main>
@@ -49,28 +50,28 @@
             <section class="card-front">
                 <article class="sideCard"></article>
                 <article class="divs">
-                    <div>
-                        <button class="category geography">G</button>
+                    <div class="category">
+                        <button class="category geography" onclick="catGeo()">G</button>
                         <text class="category" id="geography">Geography</text>
                     </div>
                     <div>
-                        <button class="category entertainment">E</button>
+                        <button class="category entertainment" onclick="catEnt()">E</button>
                         <text class="category entertainment">Entertainment</text>
                     </div>
                     <div>
-                        <button class="category history">H</button>
+                        <button class="category history" onclick="catHist()">H</button>
                         <text class="category history">History</text>
                     </div>
                     <div>
-                        <button class="category art">AL</button>
+                        <button class="category art" onclick="catArt()">AL</button>
                         <text class="category art">Art & Literature</text>
                     </div>
                     <div>
-                        <button class="category science">SN</button>
+                        <button class="category science" onclick="catSci()">SN</button>
                         <text class="category science">Science & Nature</text>
                     </div>
                     <div>
-                        <button class="category sports">SL</button>
+                        <button class="category sports" onclick="catSports()">SL</button>
                         <text class="category sports">Sports & Leisure</text>
                     </div>
                 </article>
@@ -80,9 +81,10 @@
         </section>
     </section>
 </section>
+</main>
 
 <!-- ANIMATION -->
-</main></main>
+
 
 <!-- FOOTER -->
 <footer></footer>
