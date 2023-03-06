@@ -131,32 +131,43 @@ const answers = (answrArr, correctAns) => {
       let answerChoice = answer.innerText;
       let answerBtn = answer.id;
       if (answerChoice == correctAns || answerBtn == correctAns) {
-        alert("Correct! UR DA BEST!");
-        wholeCard.innerHTML = original;
-        questionNum++;
-        pie++;
-        console.log("Question Num: ", questionNum)
-        console.log("Correct: ", pie);
-        checkWin();
+        rightAns();
       }
-      else {console.log('incorrect');
-      alert("INCORRECT");
-      wholeCard.innerHTML = original;
-      console.log(pie);
-      questionNum++;
-      console.log("Question Num: ", questionNum)
-      console.log("Correct: ", pie);
-      checkWin();
-    };
+      else {
+        wrongAns();
+      };
   })});
 };
 
+const scoreCard = document.querySelector(".score");
+
+function wrongAns() { 
+  alert(`INCORRECT`);
+  wholeCard.innerHTML = original;
+  questionNum++;
+  scoreCard.innerHTML = `Question Num: ${questionNum}   Pie Pieces: ${pie}`
+  checkWin();
+};
+
+function rightAns() {
+  alert("Correct! UR DA BEST!");
+  wholeCard.innerHTML = original;
+  questionNum++;
+  pie++;
+  scoreCard.innerHTML = `Question Num: ${questionNum}   Pie Pieces: ${pie}`
+  checkWin();
+}
+
 function checkWin () {
   if (pie === 6) {
-    alert("WINNER!!!")}
+    alert("WINNER!!!");
+    pie = 0;
+    questionNum = 0;
+    return;
+  }
   else if (questionNum === 10) {
     alert("You Lose");
     pie = 0;
     questionNum = 0;
   }
-}
+};
