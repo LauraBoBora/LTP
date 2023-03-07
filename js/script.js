@@ -26,45 +26,59 @@ let difficulty = "easy"; // default difficulty
 
 easy.addEventListener('click', (evt) => {
   difficulty = "easy";
+  let easySelection = easy.innerText;
+  document.querySelector(".dropbtn").innerText = easySelection;
 });
 
 medium.addEventListener('click', (evt) => {
   difficulty = "medium";
+  document.querySelector(".dropbtn").innerText = medium.innerText;
 });
 
 hard.addEventListener('click', (evt) => {
   difficulty = "hard";
+  document.querySelector(".dropbtn").innerText = hard.innerText;
 });
 
 
-// Choose category and get question 
+// Choose category and get question - trivia db has multiple sub-categories so created random function 
+function random_cat(cats) { 
+  return cats[Math.floor(Math.random()*cats.length)];
+}
+
 function catGeo () {
   choiceCat = 22; 
   sendApiRequest();
 };
 
 function catEnt () {
-  choiceCat = 11; 
+  let cats = [11, 12, 13, 14, 15, 16, 26, 29, 31, 32];
+  choiceCat = random_cat(cats); 
+  console.log(choiceCat)
   sendApiRequest();
 };
 
 function catHist () {
-  choiceCat = 20; 
+  let cats = [20, 23, 24]
+  choiceCat = random_cat(cats); 
   sendApiRequest();
 };
 
 function catArt () {
-  choiceCat = 25; 
+  let cats = [10, 25]
+  choiceCat = random_cat(cats); 
   sendApiRequest();
 };
 
 function catSci () {
-  choiceCat = 17; 
+  let cats = [17, 18, 19, 27, 30]
+  choiceCat = random_cat(cats); 
   sendApiRequest();
 };
 
 function catSports () {
-  choiceCat = 21; 
+  let cats = [21, 28]
+  choiceCat = random_cat(cats); 
   sendApiRequest();
 };
 
@@ -72,7 +86,6 @@ function catSports () {
 // Send API Request, log data in console, call useApiData - https://www.youtube.com/watch?v=SgJ_femmsfg
 async function sendApiRequest() {
     let question = await fetch(`https://opentdb.com/api.php?amount=1&category=${choiceCat}&difficulty=${difficulty}&type=multiple`);
-    // console.log(question);
     let data = await question.json();
     console.log(data);
     useApiData(data);
@@ -113,8 +126,8 @@ const answers = (answrArr, correctAns) => {
     btnChoice = buttonLetters[i]
     newBtn.innerText = btnChoice;
     newBtn.setAttribute('id', answrArr[i]);
-    newBtn.setAttribute('class', 'category answer')
-    // console.log(newBtn);
+    newBtn.setAttribute('class', `category answer ${btnChoice}`)
+    // newBtn.style.padding = 10
     let newText = document.createElement('text');
     newText.innerHTML=answrArr[i];
     newText.setAttribute('class', 'answer');
@@ -141,6 +154,7 @@ const answers = (answrArr, correctAns) => {
 
 const scoreCard = document.querySelector(".score");
 
+// if wrong answer is selected
 function wrongAns() { 
   alert(`INCORRECT`);
   wholeCard.innerHTML = original;
@@ -149,6 +163,7 @@ function wrongAns() {
   checkWin();
 };
 
+// if correct answer is selected
 function rightAns() {
   alert("Correct! UR DA BEST!");
   wholeCard.innerHTML = original;
@@ -158,6 +173,7 @@ function rightAns() {
   checkWin();
 }
 
+// check for win/lose
 function checkWin () {
   if (pie === 6) {
     alert("WINNER!!!");
@@ -171,3 +187,4 @@ function checkWin () {
     questionNum = 0;
   }
 };
+
