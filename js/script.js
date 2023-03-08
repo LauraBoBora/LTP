@@ -127,11 +127,11 @@ const answers = (answrArr, correctAns) => {
     newBtn.innerText = btnChoice;
     newBtn.setAttribute('id', answrArr[i]);
     newBtn.setAttribute('class', `category answer ${btnChoice}`)
-    // newBtn.style.padding = 10
     let newText = document.createElement('text');
     newText.innerHTML=answrArr[i];
     newText.setAttribute('class', 'answer');
     newText.setAttribute('id', btnChoice);
+    newText.style.paddingLeft = "20px";
     let newDiv = document.createElement('div');
     wholeCard.append(newDiv);
     newDiv.append(newBtn, newText);}
