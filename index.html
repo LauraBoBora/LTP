@@ -14,13 +14,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Mystery+Quest&display=swap" rel="stylesheet">
     <script defer src="js/script.js"></script>
 </head>
 
 <body>
  <!-- NAV BAR -->
     <nav>
-        <button class="nav about">about</button>
+        <button class="nav about" onclick="aboutButton()">about</button>
+        <div class="hide" id="textInput">Hi there! Welcome to Laura's Trivial Pursuit. This is my very first Javascript Project. Enjoy! <a href="https://www.linkedin.com/in/laura-ostering-2141a315a/" target="_blank">Laura's LinkedIn</a>
+        </div>
     </nav>
 
 <!-- HEADER -->
@@ -49,7 +52,7 @@
     <section class="card" id="card">
         <section class="card-inner">
             <section class="card-front">
-                <article class="sideCard"></article>
+                <article class="sideCard">LTP</article>
                 <article class="divs">
                     <div class="category">
                         <button class="category geography" onclick="catGeo()">G</button>

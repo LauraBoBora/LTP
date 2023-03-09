@@ -1,3 +1,7 @@
+function aboutButton(){
+  document.getElementById('textInput').classList.toggle("show");
+}
+
 /* DROPDOWN BUTTON - https://www.w3schools.com/howto/howto_js_dropdown.asp
 When the user clicks on the button, toggle between hiding and showing the dropdown content */
 function dropDown() {
@@ -147,6 +151,7 @@ const answers = (answrArr, correctAns) => {
         rightAns();
       }
       else {
+        alert(`INCORRECT, the correct answer is ${correctAns}`);
         wrongAns();
       };
   })});
@@ -156,7 +161,6 @@ const scoreCard = document.querySelector(".score");
 
 // if wrong answer is selected
 function wrongAns() { 
-  alert(`INCORRECT`);
   wholeCard.innerHTML = original;
   questionNum++;
   scoreCard.innerHTML = `Question Num: ${questionNum}   Pie Pieces: ${pie}`
@@ -182,9 +186,10 @@ function checkWin () {
     return;
   }
   else if (questionNum === 10) {
-    alert("You Lose");
     pie = 0;
     questionNum = 0;
+    alert("You Lose");
+    scoreCard.innerHTML = ''
   }
 };
 
