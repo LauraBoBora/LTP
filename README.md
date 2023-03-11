@@ -1,6 +1,6 @@
 # LAURA - PROJECT 1
 
-## LTP - Laura's Trivia Pursuit
+## LTP - Laura's Trivia Pursuit - https://laurabobora.github.io/LTP/
 
 Create an API URL for Open Trivia DB https://opentdb.com/ using template literal & input from user for difficulty and category. Returns a question with 4 multiple choice answers. When user selects an answer, the pie is filled in if answered correctly, or ‘wrong’ is displayed. User has 10 chances to get all 6 pieces of pie filled in.
 
@@ -47,6 +47,11 @@ Create an API URL for Open Trivia DB https://opentdb.com/ using template literal
 ![Screenshot 2023-02-25 at 9 07 38 AM](https://user-images.githubusercontent.com/119815465/221367273-f63b6b86-2b84-4a63-a939-261d295a14a3.png)
 
 ### FINAL PRODUCT
+
+<img width="1512" alt="Screenshot 2023-03-11 at 7 15 17 AM" src="https://user-images.githubusercontent.com/119815465/224490192-986cc60b-a99c-480e-847d-c7e3a68d1514.png">
+
+<img width="1500" alt="Screenshot 2023-03-11 at 7 16 00 AM" src="https://user-images.githubusercontent.com/119815465/224490221-ed2dd81d-68b4-480f-bfcd-a448f39a1eb0.png">
+
 
 ### NEXT STEPS
 
