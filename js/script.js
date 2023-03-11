@@ -44,6 +44,15 @@ hard.addEventListener('click', (evt) => {
   document.querySelector(".dropbtn").innerText = hard.innerText;
 });
 
+// When the user clicks on div, open the popup
+function myFunction(myBool) {
+  let popup = document.getElementById("myPopup");
+  if (myBool) {
+    popup.innerHTML = "CORRECT!! ur da best";
+  }
+  popup.classList.toggle("show");
+};
+
 
 // Choose category and get question - trivia db has multiple sub-categories so created random function 
 function random_cat(cats) { 
@@ -151,7 +160,8 @@ const answers = (answrArr, correctAns) => {
         rightAns();
       }
       else {
-        alert(`INCORRECT, the correct answer is ${correctAns}`);
+        let popup = document.getElementById("myPopup");
+        popup.innerHTML= "<b>INCORRECT</b>" + ` the correct answer is ${correctAns}`;
         wrongAns();
       };
   })});
@@ -161,6 +171,7 @@ const scoreCard = document.querySelector(".score");
 
 // if wrong answer is selected
 function wrongAns() { 
+  myFunction(false);
   wholeCard.innerHTML = original;
   questionNum++;
   scoreCard.innerHTML = `Question Num: ${questionNum}   Pie Pieces: ${pie}`
@@ -169,27 +180,31 @@ function wrongAns() {
 
 // if correct answer is selected
 function rightAns() {
-  alert("Correct! UR DA BEST!");
+  myFunction(true);
   wholeCard.innerHTML = original;
   questionNum++;
   pie++;
   scoreCard.innerHTML = `Question Num: ${questionNum}   Pie Pieces: ${pie}`
-  checkWin();
-}
+  checkWin()
+};
+
 
 // check for win/lose
 function checkWin () {
   if (pie === 6) {
-    alert("WINNER!!!");
+    let popup = document.getElementById("myPopup");
+    popup.innerHTML= "WIIIINNNNNEERRR!!!! congrats"
+    scoreCard.innerHTML = '';
     pie = 0;
     questionNum = 0;
-    return;
+    return true;
   }
   else if (questionNum === 10) {
+    let popup = document.getElementById("myPopup");
+    popup.innerHTML= "You are a Loser";
+    scoreCard.innerHTML = '';
     pie = 0;
     questionNum = 0;
-    alert("You Lose");
-    scoreCard.innerHTML = ''
   }
 };
 
