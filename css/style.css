@@ -130,7 +130,6 @@ button.show {
 .popup {
   position: relative;
   display: inline-block;
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -144,6 +143,7 @@ button.show {
   color: #fff;
   font-family: 'monospace';
   font-weight: lighter;
+  text-decoration: none;
   color: goldenrod;
   text-align: center;
   font-size: 2em;
@@ -266,3 +266,12 @@ button.category.sports {
   background: orange
 }
 
+.close-button {
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+}
