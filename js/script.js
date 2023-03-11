@@ -45,10 +45,14 @@ hard.addEventListener('click', (evt) => {
 });
 
 // When the user clicks on div, open the popup
+const xBtn = document.createElement("button");
+xBtn.classList.add("close-button");
+xBtn.innerText = "x";
 function myFunction(myBool) {
   let popup = document.getElementById("myPopup");
   if (myBool) {
-    popup.innerHTML = "CORRECT!! ur da best";
+    popup.innerHTML = "CORRECT!! ur da best"
+    popup.append(xBtn);
   }
   popup.classList.toggle("show");
 };
@@ -161,7 +165,8 @@ const answers = (answrArr, correctAns) => {
       }
       else {
         let popup = document.getElementById("myPopup");
-        popup.innerHTML= "<b>INCORRECT</b>" + ` the correct answer is ${correctAns}`;
+        popup.innerText = `INCORRECT the correct answer is ${correctAns}`;
+        popup.append(xBtn);
         wrongAns();
       };
   })});

@@ -45,3 +45,11 @@ Create an API URL for Open Trivia DB https://opentdb.com/ using template literal
 - Will have 10 questions to get all 6 pieces of pie
 
 ![Screenshot 2023-02-25 at 9 07 38 AM](https://user-images.githubusercontent.com/119815465/221367273-f63b6b86-2b84-4a63-a939-261d295a14a3.png)
+
+### FINAL PRODUCT
+
+### NEXT STEPS
+
+- Would have loved to get the pie added for effect
+- I had pop-up alerts but found out late that those were not allowed. I was able to add a hidden div to pop up, but it doesn't look as great as I would like it to.
+- More animations! CSS is tough
